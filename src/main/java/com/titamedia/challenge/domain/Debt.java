@@ -36,7 +36,7 @@ public class Debt {
     @JoinColumn(name = "id")
     private DebtSummary summary;
     @OneToMany(cascade = CascadeType.ALL)
-    List<Payment> payments;
+    private List<Payment> payments;
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime createdAt;
     @Enumerated(EnumType.STRING)

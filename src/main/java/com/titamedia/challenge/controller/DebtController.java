@@ -1,7 +1,9 @@
 package com.titamedia.challenge.controller;
 
 import com.titamedia.challenge.dto.BankDto;
+import com.titamedia.challenge.dto.DebtDto;
 import com.titamedia.challenge.service.BankService;
+import com.titamedia.challenge.service.DebtService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +20,19 @@ import java.util.List;
 @Log4j2
 public class DebtController {
     private final BankService bankService;
+    private final DebtService debtService;
 
     @GetMapping({"{userId}/banks"})
     public ResponseEntity<List<BankDto>> listBanks(@PathVariable Integer userId) {
         log.info("Request to get list of user's banks");
         var bankList = bankService.findByUserId(userId);
         return ResponseEntity.ok(bankList);
+    }
+
+    @GetMapping({"{userId}/banks/{bankId}"})
+    public ResponseEntity<List<DebtDto>> listDebts(@PathVariable Integer userId, @PathVariable Integer bankId) {
+        log.info("Request to get the list of debts for given user id {} and bank id {}", userId, bankId);
+        var debtList = debtService.findByUserIdAndBankId(userId, bankId);
+        return ResponseEntity.ok(debtList);
     }
 }
