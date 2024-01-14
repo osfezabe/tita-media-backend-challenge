@@ -18,4 +18,9 @@ public class BankService {
         var bankList = bankRepository.findAll();
         return bankMapper.toBankDto(bankList);
     }
+
+    public List<BankDto> findByUserId(Integer userId) {
+        var bankList = bankRepository.findByUserId(userId);
+        return bankMapper.toBankDto(bankList);
+    }
 }
