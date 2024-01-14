@@ -2,6 +2,7 @@ package com.titamedia.challenge.controller;
 
 import com.titamedia.challenge.dto.BankDto;
 import com.titamedia.challenge.dto.DebtDto;
+import com.titamedia.challenge.dto.DebtSummaryDto;
 import com.titamedia.challenge.service.BankService;
 import com.titamedia.challenge.service.DebtService;
 import lombok.RequiredArgsConstructor;
@@ -34,5 +35,12 @@ public class DebtController {
         log.info("Request to get the list of debts for given user id {} and bank id {}", userId, bankId);
         var debtList = debtService.findByUserIdAndBankId(userId, bankId);
         return ResponseEntity.ok(debtList);
+    }
+
+    @GetMapping({"{userId}/summary/{debtId}"})
+    public ResponseEntity<DebtSummaryDto> getDebtSummary(@PathVariable Integer userId, @PathVariable Integer debtId) {
+        log.info("Request get the debt summary for user id {} and debt id {}", userId, debtId);
+        var debtSummary = debtService.findSummary(userId, debtId);
+        return ResponseEntity.ok(debtSummary);
     }
 }

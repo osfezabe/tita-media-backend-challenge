@@ -1,6 +1,7 @@
 package com.titamedia.challenge.service;
 
 import com.titamedia.challenge.dto.DebtDto;
+import com.titamedia.challenge.dto.DebtSummaryDto;
 import com.titamedia.challenge.mapper.DebtMapper;
 import com.titamedia.challenge.repository.DebtRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,5 +18,10 @@ public class DebtService {
     public List<DebtDto> findByUserIdAndBankId(Integer userId, Integer bankId) {
         var debtList = debtRepository.findByUserIdAndBankId(userId, bankId);
         return debtMapper.toDebtDto(debtList);
+    }
+
+    public DebtSummaryDto findSummary(Integer userId, Integer debtId) {
+        var debt = debtRepository.findByUserIdAndId(userId, debtId).orElseThrow();
+        return debtMapper.toDebtSummaryDto(debt.getSummary());
     }
 }
