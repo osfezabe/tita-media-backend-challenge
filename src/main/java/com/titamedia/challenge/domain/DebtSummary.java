@@ -1,6 +1,8 @@
 package com.titamedia.challenge.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,4 +17,6 @@ public class DebtSummary {
     private Double pendingAmount;
     private Integer paidInstallments;
     private Integer pendingInstallments;
+    @Enumerated(EnumType.STRING)
+    private DebtStatus status;
 }
