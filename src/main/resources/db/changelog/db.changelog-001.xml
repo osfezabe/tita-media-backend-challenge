@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="2024-01-14 01" author="Oscar Zapata">
+        <comment>Add 'initial' tables</comment>
+
+        <createTable tableName="user">
+            <column name="id" type="serial" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user"/>
+            </column>
+            <column name="document" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstName" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastName" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(250)"/>
+        </createTable>
+
+        <createTable tableName="bank">
+            <column name="id" type="serial" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_bank"/>
+            </column>
+            <column name="name" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="debt">
+            <column name="id" type="serial" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_debt"/>
+            </column>
+            <column name="user_id" type="integer">
+                <constraints nullable="false" foreignKeyName="fk_debt_user" referencedTableName="user"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="bank_id" type="integer">
+                <constraints nullable="false" foreignKeyName="fk_debt_bank" referencedTableName="bank"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="created_at" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="initial_amount" type="float">
+                <constraints nullable="false"/>
+            </column>
+            <column name="installments" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="debt_summary">
+            <column name="id" type="integer">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_debt_summary"
+                             foreignKeyName="fk_debt_summary_debt" referencedTableName="debt"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="paid_amount" type="float">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pending_amount" type="float">
+                <constraints nullable="false"/>
+            </column>
+            <column name="paid_installments" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pending_installments" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="payment">
+            <column name="id" type="serial" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_payment"/>
+            </column>
+            <column name="debt_id" type="integer">
+                <constraints nullable="false" foreignKeyName="fk_payment_debt" referencedTableName="debt"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="created_at" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="float">
+                <constraints nullable="false"/>
+            </column>
+            <column name="installments" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
