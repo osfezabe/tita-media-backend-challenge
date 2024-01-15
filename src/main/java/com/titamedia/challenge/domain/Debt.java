@@ -33,7 +33,7 @@ public class Debt {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private DebtSummary summary;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "debt")
     private List<Payment> payments;
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime createdAt;
