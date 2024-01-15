@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="2024-01-14 02" author="Oscar Zapata">
+        <comment>Add test data</comment>
+        <insert tableName="user">
+            <column name="id" value="1" />
+            <column name="first_name" value="Oscar" />
+            <column name="last_name" value="Zapata" />
+            <column name="document" value="111111" />
+            <column name="email" value="oscar@ejemplo.com" />
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="2" />
+            <column name="first_name" value="Fernando" />
+            <column name="last_name" value="Bedoya" />
+            <column name="document" value="222222" />
+            <column name="email" value="fernando@ejemplo.com" />
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="3" />
+            <column name="first_name" value="Maria" />
+            <column name="last_name" value="Ramos" />
+            <column name="document" value="333333" />
+            <column name="email" value="maria@ejemplo.com" />
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="4" />
+            <column name="first_name" value="Pepito" />
+            <column name="last_name" value="Perez" />
+            <column name="document" value="444444" />
+            <column name="email" value="pepito@ejemplo.com" />
+        </insert>
+        <insert tableName="user">
+            <column name="id" value="5" />
+            <column name="first_name" value="Sandra" />
+            <column name="last_name" value="Zapata" />
+            <column name="document" value="555555" />
+            <column name="email" value="sandra@ejemplo.com" />
+        </insert>
+        <insert tableName="bank">
+            <column name="id" value="1" />
+            <column name="name" value="Bancolombia" />
+        </insert>
+        <insert tableName="bank">
+            <column name="id" value="2" />
+            <column name="name" value="Davivienda" />
+        </insert>
+        <insert tableName="bank">
+            <column name="id" value="3" />
+            <column name="name" value="AV Villas" />
+        </insert>
+        <insert tableName="bank">
+            <column name="id" value="4" />
+            <column name="name" value="Banco de Occidente" />
+        </insert>
+        <insert tableName="debt">
+            <column name="id" value="1" />
+            <column name="user_id" value="1" />
+            <column name="bank_id" value="2" />
+            <column name="created_at" value="2023-01-14" />
+            <column name="initial_amount" value="17700000" />
+            <column name="installments" value="48" />
+        </insert>
+        <insert tableName="debt_summary">
+            <column name="id" value="1" />
+            <column name="paid_amount" value="0" />
+            <column name="pending_amount" value="17700000" />
+            <column name="paid_installments" value="0" />
+            <column name="pending_installments" value="48" />
+            <column name="status" value="ACTIVE" />
+        </insert>
+        <insert tableName="debt">
+            <column name="id" value="2" />
+            <column name="user_id" value="1" />
+            <column name="bank_id" value="3" />
+            <column name="created_at" value="2023-03-14" />
+            <column name="initial_amount" value="25000000" />
+            <column name="installments" value="60" />
+        </insert>
+        <insert tableName="debt_summary">
+            <column name="id" value="2" />
+            <column name="paid_amount" value="0" />
+            <column name="pending_amount" value="25000000" />
+            <column name="paid_installments" value="0" />
+            <column name="pending_installments" value="60" />
+            <column name="status" value="ACTIVE" />
+        </insert>
+        <insert tableName="debt">
+            <column name="id" value="3" />
+            <column name="user_id" value="2" />
+            <column name="bank_id" value="4" />
+            <column name="created_at" value="2023-05-10" />
+            <column name="initial_amount" value="200000000" />
+            <column name="installments" value="60" />
+        </insert>
+        <insert tableName="debt_summary">
+            <column name="id" value="3" />
+            <column name="paid_amount" value="0" />
+            <column name="pending_amount" value="200000000" />
+            <column name="paid_installments" value="0" />
+            <column name="pending_installments" value="60" />
+            <column name="status" value="ACTIVE" />
+        </insert>
+        <insert tableName="debt">
+            <column name="id" value="4" />
+            <column name="user_id" value="4" />
+            <column name="bank_id" value="2" />
+            <column name="created_at" value="2023-01-14" />
+            <column name="initial_amount" value="20000000" />
+            <column name="installments" value="48" />
+        </insert>
+        <insert tableName="debt_summary">
+            <column name="id" value="4" />
+            <column name="paid_amount" value="0" />
+            <column name="pending_amount" value="20000000" />
+            <column name="paid_installments" value="0" />
+            <column name="pending_installments" value="48" />
+            <column name="status" value="ACTIVE" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

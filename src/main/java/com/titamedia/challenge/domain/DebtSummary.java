@@ -13,8 +13,8 @@ import lombok.Setter;
 public class DebtSummary {
     @Id
     private Integer id;
-    private Double paidAmount;
-    private Double pendingAmount;
+    private Long paidAmount;
+    private Long pendingAmount;
     private Integer paidInstallments;
     private Integer pendingInstallments;
     @Enumerated(EnumType.STRING)

@@ -56,7 +56,7 @@ public class DebtService {
         summary.setStatus(summary.getPendingInstallments() > 0 ? DebtStatus.ACTIVE : DebtStatus.PAID);
     }
 
-    private Payment createPayment(Debt debt, Double value, Integer installments) {
+    private Payment createPayment(Debt debt, Long value, Integer installments) {
         var payment = new Payment();
         payment.setCreatedAt(LocalDateTime.now());
         payment.setDebt(debt);
@@ -78,7 +78,7 @@ public class DebtService {
         return request.totalPayment() ? debt.getSummary().getPendingInstallments() : request.installments();
     }
 
-    private Double getValueToPay(Debt debt, Integer installments) {
+    private Long getValueToPay(Debt debt, Integer installments) {
         return installments * debt.getInitialAmount() / debt.getInstallments();
     }
 }

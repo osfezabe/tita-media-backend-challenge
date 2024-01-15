@@ -15,10 +15,10 @@
             <column name="document" type="varchar(20)">
                 <constraints nullable="false"/>
             </column>
-            <column name="firstName" type="varchar(250)">
+            <column name="first_name" type="varchar(250)">
                 <constraints nullable="false"/>
             </column>
-            <column name="lastName" type="varchar(250)">
+            <column name="last_name" type="varchar(250)">
                 <constraints nullable="false"/>
             </column>
             <column name="email" type="varchar(250)"/>

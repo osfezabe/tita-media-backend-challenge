@@ -22,6 +22,7 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<UserDto>> listUsers() {
         log.info("Request to get all users");
-        return ResponseEntity.ok(userService.findAll());
+        var userList = userService.findAll();
+        return ResponseEntity.ok(userList);
     }
 }

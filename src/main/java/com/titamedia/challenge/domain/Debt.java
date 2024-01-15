@@ -37,6 +37,6 @@ public class Debt {
     private List<Payment> payments;
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime createdAt;
-    private Double initialAmount;
+    private Long initialAmount;
     private Integer installments;
 }
