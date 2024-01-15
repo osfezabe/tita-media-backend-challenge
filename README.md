@@ -12,7 +12,7 @@ Realizar una aplicación que le permite a un cliente pagar las deudas que posee 
 * El sistema debe permitir al usuario seleccionar una deuda y mostrar cuánto ha pagado, cuando cuotas debe, cuanto es el dinero total que debe.
 * El sistema debe permitir al usuario pagar una deuda, el usuario podrá indicar cuantas cuotas quiere pagar o si quiere pagar su deuda en su totalidad. Posteriormente el sistema debe actualizar para mostrar el nuevo saldo que debe, cuántas cuotas debe o si la deuda ya fue cancelada.
 
-### Tegnologías
+### Tecnologías
 A continuación, se describen las tecnologías utilizadas en la aplicación:
 
 * [Spring Boot](https://spring.io/projects/spring-boot)
