@@ -1,6 +1,16 @@
 # TITA Backend Challenge
-Prueba técnica para TITA MEDIA DESCRIPCIÓN COMPLETA
+Prueba técnica para TITA MEDIA  
+Realizar una aplicación que le permite a un cliente pagar las deudas que posee con sus bancos, se deben soportar las siguientes necesidades:
+* Se debe mostrar el listado de bancos que tiene el usuario.
+* Se debe mostrar el listado de deudas según el banco seleccionado.
+* Permitir al cliente pagar la deuda.
 
+#### Aspectos Funcionales
+
+* Debe permitir al usuario ver el listado de sus bancos.
+* El sistema debe permitir al usuario seleccionar un Banco y mostrar las deudas que posee en ese banco.
+* El sistema debe permitir al usuario seleccionar una deuda y mostrar cuánto ha pagado, cuando cuotas debe, cuanto es el dinero total que debe.
+* El sistema debe permitir al usuario pagar una deuda, el usuario podrá indicar cuantas cuotas quiere pagar o si quiere pagar su deuda en su totalidad. Posteriormente el sistema debe actualizar para mostrar el nuevo saldo que debe, cuántas cuotas debe o si la deuda ya fue cancelada.
 
 ### Tegnologías
 A continuación se describen las tecnologías utilizadas en la aplicación:
@@ -11,7 +21,6 @@ A continuación se describen las tecnologías utilizadas en la aplicación:
 * [Project Lombok](https://www.projectlombok.org/)
 * [liquibase](https://www.liquibase.org/)
 * [Mapstruct](https://mapstruct.org/)
-* [JDBC API](https://docs.spring.io/spring-boot/docs/3.2.1/reference/htmlsingle/index.html#data.sql)
 * [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.2.1/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
 
 ### Características
@@ -71,8 +80,13 @@ En IntelliJ basta con hacer clic en el icono de "play" ▶️ que aparece al lad
 Una ventaja adicional de ejecutar el proyecto desde el IDE es la posibilidad de realizar la ejecución en modo depuración
 para realizar seguimiento paso a paso y ver cómo se comportan los valores dentro de las variables en tiempo de ejecución.
 
+## Generar el archivo ejecutable
 
 El siguiente comando compilará el proyecto y permitirá generar el archivo jar ejecutable.
 ```shell
 mvn clean package
+```
+La aplicación se puede ejecutar con el siguiente comando:
+```shell
+java -jar technical_test-0.0.1-SNAPSHOT.jar
 ```
