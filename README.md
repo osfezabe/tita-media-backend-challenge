@@ -13,7 +13,7 @@ Realizar una aplicación que le permite a un cliente pagar las deudas que posee 
 * El sistema debe permitir al usuario pagar una deuda, el usuario podrá indicar cuantas cuotas quiere pagar o si quiere pagar su deuda en su totalidad. Posteriormente el sistema debe actualizar para mostrar el nuevo saldo que debe, cuántas cuotas debe o si la deuda ya fue cancelada.
 
 ### Tegnologías
-A continuación se describen las tecnologías utilizadas en la aplicación:
+A continuación, se describen las tecnologías utilizadas en la aplicación:
 
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [Java JDK 17](https://jdk.java.net/17/)
@@ -25,14 +25,14 @@ A continuación se describen las tecnologías utilizadas en la aplicación:
 
 ### Características
 
-La aplicación ofrece los siguientes servicios a través de un API REST.
+La aplicación ofrece los siguientes endpoints a través de un API REST.
 
-* Servicio para listar los usuarios existentes en la aplicación
-* Servicio para listar los bancos existentes en la aplicación
-* Servicio para consultar las daudas que tiene un usuario específico
-* Servicio para listar las deudas que tiene un usuario con un banco específico
-* Servicio para ver el detalle de la deuda de un usuario y un banco específico
-* Servicio para pagar cuotas o la deuda en su totalidad que tiene un usuario con un banco específico
+* Endpoint para listar los usuarios existentes en la aplicación
+* Endpoint para listar los bancos existentes en la aplicación
+* Endpoint para consultar las deudas que tiene un usuario específico
+* Endpoint para listar las deudas que tiene un usuario con un banco específico
+* Endpoint para ver el detalle de la deuda de un usuario y un banco específico
+* Endpoint para pagar cuotas o la deuda en su totalidad que tiene un usuario con un banco específico
 
 ## Herramientas de desarrollo
 
